@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhoomi - India's Number 1 Farmer's Choice</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .header h2 {
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #28a745;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background-color: #f8f9fa;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1e7e34;
+        }
+
+        .about-us {
+            padding: 40px;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-button:hover {
+            background-color: #0056b3;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Bhoomi</h1>
+        <h2>India's number 1 farmers choice</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Empowering Indian Farmers</h2>
+            <p>Bhoomi is dedicated to providing high-quality products and resources to help Indian farmers thrive. We believe in sustainable agriculture and empowering rural communities.</p>
+            <a href="products.html" class="cta-button">Explore Our Products</a>
+        </div>
+        <img src="https://th.bing.com/th/id/OIP.FZZ82F5d6ClTOsVko5seRQHaE7?w=2000&h=1331&rs=1&pid=ImgDetMain" alt="Farmer in field" class="hero-image">
+    </section>
+
+    <section class="about-us">
+        <!-- <h2>About Bhoomi</h2> -->
+        <!-- <p>Founded in [Year], Bhoomi has grown to become a trusted name in the agricultural sector. We are committed to innovation, quality, and customer satisfaction. Our mission is to support farmers with the tools and knowledge they need to succeed.</p> -->
+        <!-- <p>We work closely with agricultural experts and researchers to develop cutting-edge products that address the challenges faced by modern farmers. Our focus is on sustainable practices that protect the environment and ensure long-term agricultural productivity.</p> -->
+        <div class="video-container">
+            <video width="640" height="360" controls>
+                <source src="https://media.istockphoto.com/id/1305087489/video/agriculture-drone-fly-to-sprayed-fertilizer-on-the-rice-field.mp4?s=mp4-640x640-is&k=20&c=YgorSU5dffESoTCI2YKyRxgb2kxdi1saTb_fqSYz0y8=" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://agribegri.com/admin/images/prod_image/12927233471732681493.webp" alt="Product 1">
+                <h3>GLY 71 Herbicide</h3>
+                <p>Glyster 71 is a non-selective, post-emergence herbicide for the control of annual perennial, broadleaf, and grassy weeds..</p>
+                <a href="#" class="product-button">Learn More</a>
+            </div>
+            <div class="product">
+                <img src="https://agribegri.com/admin/images/prod_image/5adc3b03bacc5b26cb5ec31559e97aae-05-25-22-14-52-05.webp" alt="Product 2">
+                <h3>Star Chemicals Metrigold</h3>
+                <p>Metrigold is a selective pre & post emergence systemic herbicide. It effectively controls wide variety broad-leaved weeds & grasses by inhibiting photosynthesis in them.</p>
+                <a href="#" class="product-button">Learn More</a>
+            </div>
+            </div>
+    </section>
+
+    <div class="image-grid">
+          <div><img src="https://www.atlanticcouncil.org/wp-content/uploads/2020/09/An-Indian-farmer-in-a-field-scaled.jpg" alt="Farmer 1"></div>
+
+                <div><img src="https://cdn.shopclues.com/images1/detailed/104451/148792220-104451383-1578568495.jpg"alt="Farmer 2"></div>
+        
+                <div><img src="https://th.bing.com/th/id/OIP.xAr4_Nrq-UbyL-jz46kqMAAAAA?rs=1&pid=ImgDetMain" alt="Farmer 3"></div>
+        
+        
+    </div>
+
+    <footer>
+        &copy; 2023 Bhoomi. All rights reserved.
+    </footer>
+
+</body>
+</html>

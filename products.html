@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #218838;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .product-box {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .product-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .product-box h3 {
+            font-size: 1.3em;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .product-box .price {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #28a745;
+        }
+
+        .product-box button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bhoomi</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.html">Cart</a></li> </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="products-container"></div>
+    </main>
+
+    <script>
+        const productsContainer = document.querySelector('.products-container');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const products = [
+            {
+                image: "https://agribegri.com/admin/images/prod_image/9646320021735540393.webp",
+                name: "BACF Nutrixon Cal SL",
+                price: "$410",
+                description: "Description of Fertilizer A"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/7713950921724405812.webp",
+                name: "GACIL Enriched Multi Micronutrients",
+                price: "$440",
+                description: "Description of Fertilizer B"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/11297330411735540949.webp",
+                name: "BACF EVOKE Insecticide",
+                price: "$40",
+                description: "Description of Fertilizer C"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/17489168151733826133.webp",
+                name: "Flowie - Nitrobenzene",
+                price: "$50",
+                description: "Description of Fertilizer D"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/20739413741733826543.webp",
+                name: "FOREVER Plant Growth Promoter",
+                price: "$50",
+                description: "Description of Fertilizer D"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/19318456721733210100.webp",
+                name: "Arostel Fungicide",
+                price: "$50",
+                description: "Description of Fertilizer D"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/12927233471732681493.webp",
+                name: "GLY 71 Herbicide",
+                price: "$50",
+                description: "Description of Fertilizer D"
+            },
+            {
+                image: "https://agribegri.com/admin/images/prod_image/5adc3b03bacc5b26cb5ec31559e97aae-05-25-22-14-52-05.webp",
+                name: "Star Chemicals Metrigold",
+                price: "$50",
+                description: "Description of Fertilizer D"
+            },
+        ];
+
+        products.forEach(product => {
+            const productBox = document.createElement('div');
+            productBox.className = 'product-box';
+            productBox.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p class="price">${product.price}</p>
+                <button class="buy-now-button">Buy Now</button>
+            `;
+            productsContainer.appendChild(productBox);
+
+            const buyButton = productBox.querySelector('.buy-now-button');
+            buyButton.addEventListener('click', () => {
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location.href = 'cart.html';
+            });
+        });
+    </script>
+</body>
+</html>
