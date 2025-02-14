@@ -119,13 +119,16 @@
         const cartTotal = document.querySelector('.cart-total');
         const checkoutButton = document.getElementById('checkout-button');
 
+        // Retrieve cart data from localStorage
         const storedCart = localStorage.getItem('cart');
         let cart = storedCart ? JSON.parse(storedCart) : [];
 
+        // Function to update the cart display
         function updateCartDisplay() {
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
+            cartItemsContainer.innerHTML = ''; // Clear the container
+            let total = 0; // Initialize total amount
 
+            // Loop through each item in the cart
             cart.forEach((item, index) => {
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item'; // Add class for styling
@@ -138,22 +141,31 @@
                     <button class="remove-button" data-index="${index}">Remove</button>
                 `;
                 cartItemsContainer.appendChild(cartItem);
-                total += parseFloat(item.price.replace('$', ''));
-
+                    var price = item.price.replace("₹","");
+                    price.replace("₹","");
+                    console.log(price);
+                    
+                // Add the item's price to the total
+                total += parseFloat(price); // Convert price to a number
+                    
+                // Add event listener to the remove button
                 const removeButton = cartItem.querySelector('.remove-button');
                 removeButton.addEventListener('click', () => {
                     const itemIndex = parseInt(removeButton.dataset.index);
-                    cart.splice(itemIndex, 1);
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    updateCartDisplay();
+                    cart.splice(itemIndex, 1); // Remove the item from the cart
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+                    updateCartDisplay(); // Refresh the cart display
                 });
             });
 
-            cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+            // Display the total amount
+            cartTotal.textContent = `Total: ₹${total.toFixed(2)}`;
         }
 
+        // Initial call to display the cart
         updateCartDisplay();
 
+        // Event listener for the checkout button
         checkoutButton.addEventListener('click', () => {
             alert("Proceeding to payment..."); // Replace with your payment logic
         });
